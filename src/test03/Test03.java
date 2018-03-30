@@ -1,9 +1,36 @@
 package test03;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
 public class Test03 {
 
 	public static void main(String[] args) throws Exception {
-		  String str="ceshiadmin_123!";
+//		  String path="F:\\test";
+//		  System.out.println(path.replaceAll("\\\\", "\\\\\\\\"));
+		 Thread t=new Thread(new Runnable(){
+
+			@Override
+			public void run() {
+				
+				while(true){
+					Date date=new Date();
+					SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+					System.out.println(sdf.format(date));
+					try {
+						Thread.sleep(1000L);
+					} catch (InterruptedException e) {		
+						e.printStackTrace();
+					}
+				}
+				
+				
+			}
+			 
+		 });
+		 t.start();
 	}
 	 public static byte[] HexString2Bytes(String hexstr) {
 	        byte[] b = new byte[hexstr.length() / 2];

@@ -11,7 +11,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.List;
-
+/**
+ * 测试 cmd  命令
+ * @author pain
+ *
+ */
 public class Test1 {
 
 	public static void main(String[] args) {

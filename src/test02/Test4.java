@@ -12,7 +12,7 @@ public class Test4 {
 
 	private String data="admin123!";
 	public static void main(String[] args){
-		
+		isCRC();
 	}
 	public String getEncodeData(String publicKey,String data){
 		
@@ -23,10 +23,19 @@ public class Test4 {
 	
 	
 	
-	public void isCRC(){
+	public static void isCRC(){
 		String str="1121";
 		CRC32 crc=new CRC32();
 		crc.update(str.getBytes());
-		System.out.println(crc.getValue());
+		
+		long res=crc.getValue();
+		System.out.println("CRC 校验字符串是 ："+res);
+		
+		crc=new CRC32();
+	    crc.update(str.getBytes());
+	    crc.update(str.getBytes());
+	    long res1=crc.getValue();
+	    System.out.println("crc 校验结果是"+ res1);
+		
 	}
 }
